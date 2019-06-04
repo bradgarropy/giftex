@@ -5,8 +5,13 @@
     "keywords": [
         "gatsby",
         "react",
+        "reactjs",
+        "sass",
         "scss",
-        "eslint"
+        "eslint",
+        "styled-components",
+        "firebase",
+        "firestore"
     ],
     "homepage": "https://giftex.netlify.com",
     "bugs": {
@@ -31,6 +36,7 @@
     "dependencies": {
         "babel-plugin-styled-components": "^1.10.0",
         "dotenv": "^8.0.0",
+        "firebase": "^6.1.0",
         "gatsby": "^2.8.2",
         "gatsby-plugin-google-analytics": "^2.0.20",
         "gatsby-plugin-google-fonts": "^1.0.0",
