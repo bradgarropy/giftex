@@ -7,6 +7,7 @@ import Twitter from "../components/SEO/Twitter"
 import {firestore} from "../utils/firebase"
 
 const Index = () => {
+    console.log("everything okay?")
     const [users, setUsers] = useState([])
 
     const getUsers = async() => {
