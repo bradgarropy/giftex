@@ -1,16 +1,16 @@
 {
-    "name": "secret-santa",
+    "name": "giftex",
     "version": "0.0.1",
-    "description": "🎅🏻 secret santa",
+    "description": "🎁 gift exchange",
     "keywords": [
         "gatsby",
         "react",
         "scss",
         "eslint"
     ],
-    "homepage": "https://github.com/bradgarropy/secret-santa",
+    "homepage": "https://giftex.netlify.com",
     "bugs": {
-        "url": "https://github.com/bradgarropy/secret-santa/issues"
+        "url": "https://github.com/bradgarropy/giftex/issues"
     },
     "license": "MIT",
     "author": {
@@ -20,7 +20,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/bradgarropy/secret-santa"
+        "url": "https://github.com/bradgarropy/giftex"
     },
     "scripts": {
         "start": "gatsby develop",
