@@ -12,8 +12,14 @@ const config = {
     appId: process.env.GATSBY_FIREBASE_APP_ID,
 }
 
-const app = firebase.initializeApp(config)
-const firestore = firebase.firestore()
-const auth = firebase.auth()
+let app
+let auth
+let firestore
 
-export {firebase, app, firestore, auth}
+if (typeof window !== "undefined") {
+    app = firebase.initializeApp(config)
+    auth = firebase.auth()
+    firestore = firebase.firestore()
+}
+
+export {firebase, app, auth, firestore}
