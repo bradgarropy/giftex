@@ -4,10 +4,13 @@ import Layout from "../components/Layout"
 import Meta from "../components/SEO/Meta"
 import Facebook from "../components/SEO/Facebook"
 import Twitter from "../components/SEO/Twitter"
+import SignUp from "../components/Authentication/SignUp"
+import Login from "../components/Authentication/Login"
+import Logout from "../components/Authentication/Logout"
+import Welcome from "../components/Welcome"
 import {firestore} from "../utils/firebase"
 
 const Index = () => {
-    console.log("everything okay?")
     const [users, setUsers] = useState([])
 
     const getUsers = async() => {
@@ -32,7 +35,14 @@ const Index = () => {
             <Facebook/>
             <Twitter/>
 
-            <h1>home</h1>
+            <h1>Home</h1>
+
+            <SignUp/>
+            <Login/>
+            <Logout/>
+            <Welcome/>
+
+            <h2>Users</h2>
             {users.map(user => (
                 <p key={user.id}>
                     {user.firstName} {user.lastName}

@@ -1,4 +1,5 @@
-import Firebase from "firebase/app"
+import firebase from "firebase/app"
+import "firebase/auth"
 import "firebase/firestore"
 
 const config = {
@@ -11,7 +12,8 @@ const config = {
     appId: process.env.GATSBY_FIREBASE_APP_ID,
 }
 
-const firebase = Firebase.initializeApp(config)
-const firestore = Firebase.firestore()
+const app = firebase.initializeApp(config)
+const firestore = firebase.firestore()
+const auth = firebase.auth()
 
-export {firebase, firestore}
+export {firebase, app, firestore, auth}
