@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from "gatsby"
 import styled from "styled-components"
+import Logout from "../Authentication/Logout"
 
 const StyledNavigation = styled.nav`
     display: grid;
@@ -18,7 +19,9 @@ const Navigation = () => {
     return (
         <StyledNavigation>
             <Link to="/">HOME</Link>
-            <Link to="/about">ABOUT</Link>
+            <Link to="/register">REGISTER</Link>
+            <Link to="/login">LOGIN</Link>
+            <Logout/>
         </StyledNavigation>
     )
 }

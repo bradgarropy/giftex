@@ -3,7 +3,7 @@ import {useState, useContext} from "react"
 import {auth} from "../../utils/firebase"
 import {UserContext} from "../../context/user"
 
-const SignUp = () => {
+const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const userContext = useContext(UserContext)
@@ -17,7 +17,6 @@ const SignUp = () => {
         )
 
         userContext.setUser(user)
-        userContext.setLoggedIn(true)
     }
 
     return (
@@ -41,4 +40,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default Register

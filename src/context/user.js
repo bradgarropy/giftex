@@ -5,12 +5,9 @@ import PropTypes from "prop-types"
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-    const [loggedIn, setLoggedIn] = useState(false)
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState()
 
     const context = {
-        loggedIn,
-        setLoggedIn,
         user,
         setUser,
     }

@@ -3,17 +3,19 @@ import Layout from "../components/Layout"
 import Meta from "../components/SEO/Meta"
 import Facebook from "../components/SEO/Facebook"
 import Twitter from "../components/SEO/Twitter"
+import Register from "../components/Authentication/Register"
 
-const About = () => {
+const RegisterPage = () => {
     return (
         <Layout>
-            <Meta title="about"/>
+            <Meta title="register"/>
             <Facebook/>
             <Twitter/>
 
-            <h1>about</h1>
+            <h1>Register</h1>
+            <Register/>
         </Layout>
     )
 }
 
-export default About
+export default RegisterPage

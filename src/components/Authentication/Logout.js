@@ -10,12 +10,10 @@ const Logout = () => {
         event.preventDefault()
 
         await auth.signOut()
-
-        userContext.setUser({})
-        userContext.setLoggedIn(false)
+        userContext.setUser()
     }
 
-    return <button onClick={onClick}>Log Out</button>
+    return <button onClick={onClick}>LOGOUT</button>
 }
 
 export default Logout

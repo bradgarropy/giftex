@@ -12,9 +12,7 @@ const Login = () => {
         event.preventDefault()
 
         const {user} = await auth.signInWithEmailAndPassword(email, password)
-
         userContext.setUser(user)
-        userContext.setLoggedIn(true)
     }
 
     return (
