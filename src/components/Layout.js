@@ -6,6 +6,7 @@ import Footer from "./Footer/Footer"
 import theme from "../styles/theme"
 import GlobalStyles from "../styles/GlobalStyles"
 import Container from "../styles/Container"
+import {UserProvider} from "../context/user"
 
 const StyledLayout = styled.div`
     height: 100vh;
@@ -15,17 +16,19 @@ const StyledLayout = styled.div`
 `
 
 const Layout = ({children}) => (
-    <ThemeProvider theme={theme}>
-        <>
-            <GlobalStyles/>
+    <UserProvider>
+        <ThemeProvider theme={theme}>
+            <>
+                <GlobalStyles/>
 
-            <StyledLayout>
-                <Header/>
-                <Container>{children}</Container>
-                <Footer/>
-            </StyledLayout>
-        </>
-    </ThemeProvider>
+                <StyledLayout>
+                    <Header/>
+                    <Container>{children}</Container>
+                    <Footer/>
+                </StyledLayout>
+            </>
+        </ThemeProvider>
+    </UserProvider>
 )
 
 Layout.propTypes = {
