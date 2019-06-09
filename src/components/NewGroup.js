@@ -1,5 +1,6 @@
 import React from "react"
 import {useState} from "react"
+import {firestore} from "../utils/firebase"
 
 const NewGroup = () => {
     const [name, setName] = useState("")
@@ -14,9 +15,17 @@ const NewGroup = () => {
         setMembers(members)
     }
 
-    const onSubmit = event => {
+    const onSubmit = async event => {
         event.preventDefault()
         console.log("onSubmit")
+
+        const group = {
+            name,
+            members,
+        }
+
+        const response = await firestore.collection("groups").add(group)
+        console.log(response)
     }
 
     return (

@@ -3,19 +3,19 @@ import Layout from "../../components/Layout"
 import Meta from "../../components/SEO/Meta"
 import Facebook from "../../components/SEO/Facebook"
 import Twitter from "../../components/SEO/Twitter"
-import NewGroup from "../../components/NewGroup"
 
-const newGroupPage = () => {
+const groupPage = props => {
+    console.log(props)
+
     return (
         <Layout>
-            <Meta title="new group"/>
+            <Meta title="group"/>
             <Facebook/>
             <Twitter/>
 
-            <h1>New Group</h1>
-            <NewGroup/>
+            <h1>Group</h1>
         </Layout>
     )
 }
 
-export default newGroupPage
+export default groupPage

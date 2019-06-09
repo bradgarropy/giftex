@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+exports.onCreatePage = async({page, actions}) => {
+    const {createPage} = actions
 
-// You can delete this file if you're not using it
+    if (page.path.match(/^\/group\/(?!new).*/)) {
+        page.matchPath = "/group/:id"
+        createPage(page)
+    }
+}
