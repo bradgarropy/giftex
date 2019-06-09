@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "gatsby"
+import Link from "next/link"
 import styled from "styled-components"
 import Logout from "../Authentication/Logout"
 
@@ -18,9 +18,18 @@ const StyledNavigation = styled.nav`
 const Navigation = () => {
     return (
         <StyledNavigation>
-            <Link to="/">HOME</Link>
-            <Link to="/register">REGISTER</Link>
-            <Link to="/login">LOGIN</Link>
+            <Link href="/">
+                <a>HOME</a>
+            </Link>
+
+            <Link href="/register">
+                <a>REGISTER</a>
+            </Link>
+
+            <Link href="/login">
+                <a>LOGIN</a>
+            </Link>
+
             <Logout/>
         </StyledNavigation>
     )

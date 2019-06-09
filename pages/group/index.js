@@ -4,9 +4,7 @@ import Meta from "../../components/SEO/Meta"
 import Facebook from "../../components/SEO/Facebook"
 import Twitter from "../../components/SEO/Twitter"
 
-const groupPage = props => {
-    console.log(props)
-
+const groupPage = () => {
     return (
         <Layout>
             <Meta title="group"/>

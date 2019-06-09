@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "public": true,
+    "builds": [
+        {
+            "src": "next.config.js",
+            "use": "@now/next",
+            "config": {
+                "maxLambdaSize": "15mb"
+            }
+        }
+    ],
+    "build": {
+        "env": {
+            "TRACKING_ID": "@tracking_id",
+            "FIREBASE_API_KEY": "@firebase_api_key",
+            "FIREBASE_PROJECT_ID": "@firebase_project_id",
+            "FIREBASE_SENDER_ID": "@firebase_sender_id",
+            "FIREBASE_APP_ID": "@firebase_app_id"
+        }
+    }
+}

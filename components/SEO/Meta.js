@@ -1,22 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {useStaticQuery, graphql} from "gatsby"
+import config from "../../static/config"
 import Helmet from "react-helmet"
-import icon from "../../../static/icon.png"
 
 const Meta = ({title}) => {
-    const data = useStaticQuery(graphql`
-        {
-            site {
-                siteMetadata {
-                    description
-                    keywords
-                }
-            }
-        }
-    `)
-
-    const {description, keywords} = data.site.siteMetadata
+    const {description, keywords} = config
 
     return (
         <Helmet>
@@ -24,7 +12,7 @@ const Meta = ({title}) => {
             <title>{title}</title>
             <meta name="description" content={description}/>
             <meta name="keywords" content={keywords}/>
-            <link rel="icon" type="image/png" href={icon}/>
+            <link rel="icon" type="image/png" href="/static/icon.png"/>
         </Helmet>
     )
 }
