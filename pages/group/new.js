@@ -5,7 +5,7 @@ import Facebook from "../../components/SEO/Facebook"
 import Twitter from "../../components/SEO/Twitter"
 import NewGroup from "../../components/NewGroup"
 
-const newGroupPage = () => {
+const NewGroupPage = () => {
     return (
         <Layout>
             <Meta title="new group"/>
@@ -18,4 +18,4 @@ const newGroupPage = () => {
     )
 }
 
-export default newGroupPage
+export default NewGroupPage
