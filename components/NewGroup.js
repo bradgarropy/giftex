@@ -1,10 +1,13 @@
 import React from "react"
 import {useState} from "react"
+import Router from "next/router"
 import {firestore} from "../utils/firebase"
 
 const NewGroup = () => {
-    const [name, setName] = useState("")
-    const [members, setMembers] = useState([])
+    const [name, setName] = useState()
+    const [members, setMembers] = useState()
+    const [date, setDate] = useState()
+    const [limit, setLimit] = useState()
 
     const onMembersChange = event => {
         const members = event.target.value
@@ -17,15 +20,16 @@ const NewGroup = () => {
 
     const onSubmit = async event => {
         event.preventDefault()
-        console.log("onSubmit")
 
         const group = {
             name,
             members,
+            date,
+            limit,
         }
 
-        const response = await firestore.collection("groups").add(group)
-        console.log(response)
+        const {id} = await firestore.collection("groups").add(group)
+        Router.push(`/group?id=${id}`)
     }
 
     return (
@@ -38,6 +42,18 @@ const NewGroup = () => {
 
             <label>Members</label>
             <input type="text" onChange={onMembersChange}/>
+
+            <label>Date</label>
+            <input
+                type="date"
+                onChange={event => setDate(event.target.value)}
+            />
+
+            <label>Limit</label>
+            <input
+                type="number"
+                onChange={event => setLimit(event.target.value)}
+            />
 
             <button>Create</button>
         </form>
