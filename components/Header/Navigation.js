@@ -5,6 +5,7 @@ import Authentication from "../Authentication/Authentication"
 
 const StyledNavigation = styled.nav`
     display: grid;
+    align-items: center;
     grid-auto-flow: column;
     grid-auto-columns: auto;
     column-gap: 1rem;

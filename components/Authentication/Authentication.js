@@ -1,6 +1,6 @@
 import React from "react"
 import {useContext} from "react"
-import {UserContext} from "../../context/user"
+import {UserContext} from "../../context"
 import Link from "next/link"
 import Logout from "./Logout"
 
@@ -9,7 +9,13 @@ const Authentication = () => {
     const {user} = userContext
 
     return user ? (
-        <Logout/>
+        <>
+            <Link href="/groups">
+                <a>GROUPS</a>
+            </Link>
+
+            <Logout/>
+        </>
     ) : (
         <>
             <Link href="/register">
