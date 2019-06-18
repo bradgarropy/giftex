@@ -39,6 +39,7 @@
         "dotenv": "^8.0.0",
         "firebase": "^6.1.1",
         "next": "^8.1.0",
+        "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-helmet": "^5.2.1",

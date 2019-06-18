@@ -1,5 +1,6 @@
 import React from "react"
 import {useState, useEffect} from "react"
+import PropTypes from "prop-types"
 import {withRouter} from "next/router"
 import Layout from "../../components/Layout"
 import Meta from "../../components/SEO/Meta"
@@ -7,8 +8,8 @@ import Facebook from "../../components/SEO/Facebook"
 import Twitter from "../../components/SEO/Twitter"
 import {firestore} from "../../utils/firebase"
 
-const GroupPage = props => {
-    const {id} = props.router.query
+const GroupPage = ({router}) => {
+    const {id} = router.query
     const [group, setGroup] = useState()
 
     useEffect(() => {
@@ -47,6 +48,10 @@ const GroupPage = props => {
             )}
         </Layout>
     )
+}
+
+GroupPage.propTypes = {
+    router: PropTypes.object.isRequired,
 }
 
 export default withRouter(GroupPage)
