@@ -6,7 +6,7 @@ const StyledFooter = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: ${({theme}) => theme.colors.lightPurple};
+    background-color: ${({theme}) => theme.colors.white};
     color: ${({theme}) => theme.colors.black};
     padding: 1.5rem;
 

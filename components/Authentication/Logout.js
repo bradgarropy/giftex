@@ -1,7 +1,9 @@
 import React from "react"
 import {useContext} from "react"
+import Router from "next/router"
 import {auth} from "../../utils/firebase"
-import {UserContext} from "../../context/user"
+import {UserContext} from "../../context"
+import {Button} from "../../styles"
 
 const Logout = () => {
     const userContext = useContext(UserContext)
@@ -11,9 +13,10 @@ const Logout = () => {
 
         await auth.signOut()
         userContext.setUser()
+        Router.push("/")
     }
 
-    return <button onClick={onClick}>LOGOUT</button>
+    return <Button onClick={onClick}>LOGOUT</Button>
 }
 
 export default Logout
