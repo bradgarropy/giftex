@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import styled from "styled-components"
-import Logout from "../Authentication/Logout"
+import Authentication from "../Authentication/Authentication"
 
 const StyledNavigation = styled.nav`
     display: grid;
@@ -22,15 +22,7 @@ const Navigation = () => {
                 <a>HOME</a>
             </Link>
 
-            <Link href="/register">
-                <a>REGISTER</a>
-            </Link>
-
-            <Link href="/login">
-                <a>LOGIN</a>
-            </Link>
-
-            <Logout/>
+            <Authentication/>
         </StyledNavigation>
     )
 }
