@@ -2,7 +2,7 @@ import React from "react"
 import App, {Container} from "next/app"
 import {ThemeProvider} from "styled-components"
 import {UserProvider} from "../context/user"
-import GlobalStyles from "../styles/GlobalStyles"
+import {GlobalStyles} from "../styles"
 import theme from "../styles/theme"
 
 class MyApp extends App {
