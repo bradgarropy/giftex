@@ -29,7 +29,7 @@ const NewGroup = () => {
         }
 
         const {id} = await firestore.collection("groups").add(group)
-        Router.push(`/group?id=${id}`)
+        Router.push(`/group/${id}`)
     }
 
     return (

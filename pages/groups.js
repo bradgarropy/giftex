@@ -47,7 +47,7 @@ const GroupsPage = () => {
             <h1>Groups</h1>
             <GroupsWrapper>
                 {groups.map(group => (
-                    <Link key={group.id} href={`/group?id=${group.id}`}>
+                    <Link key={group.id} as={`/group/${group.id}`} href={`/group?id=${group.id}`}>
                         <Group>{group.name}</Group>
                     </Link>
                 ))}
