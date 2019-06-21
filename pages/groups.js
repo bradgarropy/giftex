@@ -1,5 +1,5 @@
 import React from "react"
-import {useState, useEffect} from "react"
+import {useState, useEffect, useContext, useCallback} from "react"
 import Link from "next/link"
 import styled from "styled-components"
 import Layout from "../components/Layout"
@@ -7,6 +7,7 @@ import Meta from "../components/SEO/Meta"
 import Facebook from "../components/SEO/Facebook"
 import Twitter from "../components/SEO/Twitter"
 import {firestore} from "../utils/firebase"
+import {UserContext} from "../context"
 
 const GroupsWrapper = styled.div`
     display: grid;
@@ -20,10 +21,16 @@ const Group = styled.a`
 `
 
 const GroupsPage = () => {
+    const userContext = useContext(UserContext)
+    const {user} = userContext
+
     const [groups, setGroups] = useState([])
 
-    const getGroups = async() => {
-        const query = await firestore.collection("groups").get()
+    const getGroups = useCallback(async() => {
+        const query = await firestore
+            .collection("groups")
+            .where("members", "array-contains", user.email)
+            .get()
         const groups = query.docs.map(group => {
             return {
                 id: group.id,
@@ -32,11 +39,11 @@ const GroupsPage = () => {
         })
 
         setGroups(groups)
-    }
+    }, [user.email])
 
     useEffect(() => {
         getGroups()
-    }, [])
+    }, [getGroups])
 
     return (
         <Layout>
@@ -47,7 +54,11 @@ const GroupsPage = () => {
             <h1>Groups</h1>
             <GroupsWrapper>
                 {groups.map(group => (
-                    <Link key={group.id} as={`/group/${group.id}`} href={`/group?id=${group.id}`}>
+                    <Link
+                        key={group.id}
+                        as={`/group/${group.id}`}
+                        href={`/group?id=${group.id}`}
+                    >
                         <Group>{group.name}</Group>
                     </Link>
                 ))}
