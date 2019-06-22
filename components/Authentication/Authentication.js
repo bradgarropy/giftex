@@ -10,6 +10,10 @@ const Authentication = () => {
 
     return user ? (
         <>
+            <Link href="/group/new">
+                <a>NEW GROUP</a>
+            </Link>
+
             <Link href="/groups">
                 <a>GROUPS</a>
             </Link>
