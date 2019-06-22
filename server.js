@@ -5,10 +5,14 @@ const dev = process.env.NODE_ENV !== "production"
 const app = next({dev})
 const handle = app.getRequestHandler()
 
-app
-    .prepare()
+app.prepare()
     .then(() => {
         const server = express()
+
+        server.get("/group/new", (req, res) => {
+            const actualPage = "/group/new"
+            app.render(req, res, actualPage)
+        })
 
         server.get("/group/:id", (req, res) => {
             const actualPage = "/group"
