@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const FormField = styled.form`
+const FormField = styled.div`
     display: grid;
     row-gap: 1rem;
 `
