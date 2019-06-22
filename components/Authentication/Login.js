@@ -1,21 +1,16 @@
 import React from "react"
 import {useState, useContext} from "react"
-import Router from "next/router"
-import {auth} from "../../utils/firebase"
 import {UserContext} from "../../context"
 import {Form, FormField, Label, Input, Button} from "../../styles"
 
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const userContext = useContext(UserContext)
+    const {login} = useContext(UserContext)
 
     const onSubmit = async event => {
         event.preventDefault()
-
-        const {user} = await auth.signInWithEmailAndPassword(email, password)
-        userContext.setUser(user)
-        Router.push("/groups")
+        login(email, password)
     }
 
     return (

@@ -1,23 +1,16 @@
 import React from "react"
 import {useState, useContext} from "react"
-import {auth} from "../../utils/firebase"
 import {UserContext} from "../../context"
 import {Form, FormField, Label, Input, Button} from "../../styles"
 
 const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const userContext = useContext(UserContext)
+    const {register} = useContext(UserContext)
 
     const onSubmit = async event => {
         event.preventDefault()
-
-        const {user} = await auth.createUserWithEmailAndPassword(
-            email,
-            password,
-        )
-
-        userContext.setUser(user)
+        register(email, password)
     }
 
     return (
