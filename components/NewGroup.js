@@ -2,6 +2,7 @@ import React from "react"
 import {useState} from "react"
 import Router from "next/router"
 import {firestore} from "../utils/firebase"
+import {Form, FormField, Label, Input, Button} from "../styles"
 
 const NewGroup = () => {
     const [name, setName] = useState()
@@ -33,30 +34,38 @@ const NewGroup = () => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <label>Name</label>
-            <input
-                type="text"
-                onChange={event => setName(event.target.value)}
-            />
+        <Form onSubmit={onSubmit}>
+            <FormField>
+                <Label>Name</Label>
+                <Input
+                    type="text"
+                    onChange={event => setName(event.target.value)}
+                />
+            </FormField>
 
-            <label>Members</label>
-            <input type="text" onChange={onMembersChange}/>
+            <FormField>
+                <Label>Members</Label>
+                <Input type="text" onChange={onMembersChange}/>
+            </FormField>
 
-            <label>Date</label>
-            <input
-                type="date"
-                onChange={event => setDate(event.target.value)}
-            />
+            <FormField>
+                <Label>Date</Label>
+                <Input
+                    type="date"
+                    onChange={event => setDate(event.target.value)}
+                />
+            </FormField>
 
-            <label>Limit</label>
-            <input
-                type="number"
-                onChange={event => setLimit(event.target.value)}
-            />
+            <FormField>
+                <Label>Limit</Label>
+                <Input
+                    type="number"
+                    onChange={event => setLimit(event.target.value)}
+                />
+            </FormField>
 
-            <button>Create</button>
-        </form>
+            <Button>Create</Button>
+        </Form>
     )
 }
 
