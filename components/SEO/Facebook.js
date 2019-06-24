@@ -28,4 +28,4 @@ Facebook.propTypes = {
     image: PropTypes.string,
 }
 
-export default Facebook
+export {Facebook}
