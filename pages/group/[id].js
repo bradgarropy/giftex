@@ -1,14 +1,14 @@
 import React from "react"
 import {useState, useEffect} from "react"
-import PropTypes from "prop-types"
-import {withRouter} from "next/router"
+import {useRouter} from "next/router"
 import Layout from "../../components/Layout"
 import Meta from "../../components/SEO/Meta"
 import Facebook from "../../components/SEO/Facebook"
 import Twitter from "../../components/SEO/Twitter"
 import {firestore} from "../../utils/firebase"
 
-const GroupPage = ({router}) => {
+const GroupPage = () => {
+    const router = useRouter()
     const {id} = router.query
     const [group, setGroup] = useState()
 
@@ -50,8 +50,4 @@ const GroupPage = ({router}) => {
     )
 }
 
-GroupPage.propTypes = {
-    router: PropTypes.object.isRequired,
-}
-
-export default withRouter(GroupPage)
+export default GroupPage

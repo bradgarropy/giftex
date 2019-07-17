@@ -27,7 +27,7 @@
         "url": "https://github.com/bradgarropy/giftex"
     },
     "scripts": {
-        "dev": "node server.js",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start",
         "lint": "eslint .",
@@ -39,7 +39,7 @@
         "dotenv": "^8.0.0",
         "express": "^4.17.1",
         "firebase": "^6.1.1",
-        "next": "^8.1.0",
+        "next": "^9.0.2",
         "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",

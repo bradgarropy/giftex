@@ -57,7 +57,7 @@ const GroupsPage = () => {
                     <Link
                         key={group.id}
                         as={`/group/${group.id}`}
-                        href={`/group?id=${group.id}`}
+                        href={"/group/[id]"}
                     >
                         <Group>{group.name}</Group>
                     </Link>
