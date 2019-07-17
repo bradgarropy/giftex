@@ -2,9 +2,7 @@ import React from "react"
 import {useState, useEffect} from "react"
 import {useRouter} from "next/router"
 import Layout from "../../components/Layout"
-import Meta from "../../components/SEO/Meta"
-import Facebook from "../../components/SEO/Facebook"
-import Twitter from "../../components/SEO/Twitter"
+import {Meta, Facebook, Twitter} from "../components/SEO"
 import {firestore} from "../../utils/firebase"
 
 const GroupPage = () => {

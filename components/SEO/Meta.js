@@ -21,4 +21,4 @@ Meta.propTypes = {
     title: PropTypes.string,
 }
 
-export default Meta
+export {Meta}

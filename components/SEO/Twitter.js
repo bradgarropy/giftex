@@ -28,4 +28,4 @@ Twitter.propTypes = {
     image: PropTypes.string,
 }
 
-export default Twitter
+export {Twitter}
