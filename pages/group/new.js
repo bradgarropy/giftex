@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../../components/Layout"
-import {Meta, Facebook, Twitter} from "../components/SEO"
+import {Meta, Facebook, Twitter} from "../../components/SEO"
 import NewGroup from "../../components/NewGroup"
 
 const NewGroupPage = () => {
