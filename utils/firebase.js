@@ -12,11 +12,11 @@ const config = {
     appId: process.env.firebase.appId,
 }
 
-const app = firebase.apps.length
+firebase.apps.length
     ? firebase.app()
     : firebase.initializeApp(config)
 
 const firestore = firebase.firestore()
 const auth = firebase.auth()
 
-export {firebase, app, auth, firestore}
+export {auth, firestore}
